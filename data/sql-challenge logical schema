@@ -1,0 +1,38 @@
+#Logical Schema
+
+Employees
+-
+Employee_Number PK int 
+Title_ID int
+Birth_Date date
+First_Name string
+Last_Name string
+Sex string
+Hire_Date date
+
+
+Salaries
+-
+Employee_Number PK FK >- Employees.Employee_Number int
+Salary int
+
+Titles
+-
+Title_ID PK FK >- Employees.Title_ID int
+Title_Name string
+
+
+Departments
+-
+Department_Number PK int
+Department_Name string
+
+Department_Managers
+-
+Department_Number PK FK >- Departments.Department_Number int
+Employee_Number PK FK int
+
+Department_Employees
+-
+Employee_Number PK FK >- Employees.Employee_Number int 
+Department_Number FK >- Departments.Department_Number int
